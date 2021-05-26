@@ -1,0 +1,6 @@
+.DS_Store
+
+venv/
+
+servacc.json
+environ.sh
