@@ -22,11 +22,12 @@ def index():
   else:
     result = ""
   return """
-  <form>
+    <form>
       <fieldset><legend>Text to Speech</legend><br/>
       <label for="input_text"><span>Input Text: </span><input type="text" name="input_text"></label>
       <label><span> </span><input type="submit" value="Synthesize" /></label>
-      </fieldset></form><br/><br/>""" + result
+      </fieldset>
+    </form><br/><br/>""" + result
 
 # @app.route("/<string:input_text>")
 def synthesize_audio(input_text):
