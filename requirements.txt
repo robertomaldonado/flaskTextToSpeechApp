@@ -7,3 +7,16 @@ MarkupSafe==2.0.1
 typing-extensions==3.10.0.0
 Werkzeug==2.0.1
 zipp==3.4.1
+google-api-core==1.25.1
+google-api-python-client==2.3.0
+google-auth==1.30.0
+google-auth-httplib2==0.1.0
+google-cloud==0.34.0
+google-cloud-core==1.6.0
+google-cloud-firestore==2.1.1
+google-cloud-language==2.0.0
+google-cloud-speech==2.3.0
+google-cloud-storage==1.38.0
+google-cloud-texttospeech<2.0.0
+google-crc32c==1.1.2
+google-resumable-media==1.2.0
