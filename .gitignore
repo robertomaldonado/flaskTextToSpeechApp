@@ -4,3 +4,5 @@ venv/
 
 servacc.json
 environ.sh
+
+static/
