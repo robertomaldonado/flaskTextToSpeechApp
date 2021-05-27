@@ -49,16 +49,21 @@ def synthesize_audio(input_text, gender):
     chosen_voice = random.choice(male_en_voices) if gender == "male" else random.choice(female_en_voices)
     
     # Set the text input to be synthesized
-    # synthesis_input = texttospeech.types.SynthesisInput(str(input_text))
     synthesis_input = {"text": input_text}
+    # synthesis_input = texttospeech.types.SynthesisInput(str(input_text))
     # Build the voice request, select the language code ("en-US") and the ssml
-    # voice gender ("neutral")
     voice = texttospeech.types.VoiceSelectionParams(
-        language_code=chosen_voice.language_codes[0],
-        ssml_gender = chosen_voice.ssml_gender)
+        language_code = chosen_voice.language_codes[0],
+        ssml_gender = chosen_voice.ssml_gender
+    )  
     # Select the type of audio file you want returned
     audio_config = texttospeech.types.AudioConfig(
-        audio_encoding=texttospeech.enums.AudioEncoding.LINEAR16)
+        audio_encoding = texttospeech.enums.AudioEncoding.LINEAR16,
+        effects_profile_id = ['telephony-class-application'],
+        speaking_rate = 1,
+        pitch = 0,
+        volume_gain_db = 0,
+    )
     # Perform the text-to-speech request on the text input with the selected
     # voice parameters and audio file type
     resp = client.synthesize_speech(synthesis_input, voice, audio_config)
