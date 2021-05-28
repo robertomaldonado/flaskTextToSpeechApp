@@ -57,7 +57,7 @@ def synthesize_audio(input_text, gender):
     voice = texttospeech.types.VoiceSelectionParams(
         language_code = chosen_voice.language_codes[0],
         ssml_gender = chosen_voice.ssml_gender,
-    )  
+    )
     # Select the type of audio file you want returned
     audio_config = texttospeech.types.AudioConfig(
         audio_encoding = texttospeech.enums.AudioEncoding.LINEAR16,
@@ -83,9 +83,9 @@ def process_emotion(emotion):
   if emotion=='upset':
     cc.set_values(1.2,2,16)
   elif emotion=='sad':
-      cc.set_values(0.65,-3,-4)
+    cc.set_values(0.65,-3,-4)
   elif emotion=='stressed':
-      cc.set_values(1.3,2,0)
+    cc.set_values(1.3,2,0)
   elif emotion=='calm':
     cc.set_values(1,0,0)
   return cc
@@ -98,7 +98,7 @@ class CustomAudioConfig:
         self.rate = r
         self.pitch = p
         self.volume = l
-        
+
     def values(self):
         print(f"Rate: {self.rate}, Pitch: {self.pitch}, Volume:{self.volume}")
 
